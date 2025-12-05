@@ -1,0 +1,44 @@
+---
+
+# project information
+project_name: vlc
+project_url: "https://www.videolan.org/vlc/"
+project_logo: "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/vlc-logo.png"
+project_blurb: "[VLC Media Player]({{ project_url }}) is a free and open source cross-platform multimedia player and framework that delivers dependable performance across multiple devices."
+project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
+project_blurb_optional_extras_enabled: false
+project_categories: "Media Management"
+# supported architectures
+available_architectures:
+  - {arch: "{{ arch_x86_64 }}", tag: "latest"}
+  - {arch: "{{ arch_arm64 }}", tag: "arm64v8-latest"}
+# development version
+development_versions: false
+# container parameters
+common_param_env_vars_enabled: true
+param_container_name: "{{ project_name }}"
+param_usage_include_vols: true
+param_volumes:
+  - {vol_path: "/config", vol_host_path: "/path/to/config", desc: "Users home directory in the container, stores local files and settings"}
+param_usage_include_ports: true
+param_ports:
+  - {external_port: "3000", internal_port: "3000", port_desc: "VLC Media Player desktop gui HTTP must be proxied."}
+  - {external_port: "3001", internal_port: "3001", port_desc: "VLC Media Player desktop gui HTTPS."}
+opt_param_usage_include_env: true
+opt_param_env_vars:
+  - {env_var: "VLC_CLI", env_value: "--no-qt-minimal-view", desc: "Specify one or multiple VLC CLI flags, this string will be passed to the application in full."}
+custom_params:
+  - {name: "shm-size", name_compose: "shm_size", value: "1gb", desc: "Recommended for all desktop images."}
+# Selkies blurb settings
+selkies_blurb: true
+show_nvidia: true
+# application setup block
+app_setup_block_enabled: true
+app_setup_block: |
+  The application can be accessed at:
+
+  * https://yourhost:3001/
+
+# changelog
+changelogs:
+  - {date: "01.12.25:", desc: "Initial Version."}
