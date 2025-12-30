@@ -16,7 +16,7 @@ aiosignal                                                                     1.
 alsa-lib                                                                      1.2.14-2                                alpm                           
 alsa-topology-conf                                                            1.2.5.1-4                               alpm                           
 alsa-ucm-conf                                                                 1.2.14-2                                alpm                           
-aom                                                                           3.13.1-1                                alpm                           
+aom                                                                           3.13.1-2                                alpm                           
 archlinux-keyring                                                             20251116-1                              alpm                           
 aribb24                                                                       1.0.3-4                                 alpm                           
 aribb25                                                                       0.2.7-3                                 alpm                           
