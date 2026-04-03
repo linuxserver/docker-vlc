@@ -10,7 +10,9 @@ ARG VLC_VERSION
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 LABEL maintainer="thelamer"
 
-ENV TITLE=VLC
+ENV TITLE=VLC \
+    NO_GAMEPAD=true \
+    PIXELFLUX_WAYLAND=true
 
 RUN \
   echo "**** add icon ****" && \
